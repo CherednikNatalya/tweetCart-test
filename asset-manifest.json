@@ -1,20 +1,19 @@
 {
   "files": {
     "main.css": "/tweetCart-test/static/css/main.b4a56f3c.css",
-    "main.js": "/tweetCart-test/static/js/main.f50e251b.js",
+    "main.js": "/tweetCart-test/static/js/main.63d42337.js",
     "static/js/304.405b81a0.chunk.js": "/tweetCart-test/static/js/304.405b81a0.chunk.js",
-    "static/js/942.eca471e6.chunk.js": "/tweetCart-test/static/js/942.eca471e6.chunk.js",
+    "static/js/129.a8dd8add.chunk.js": "/tweetCart-test/static/js/129.a8dd8add.chunk.js",
     "static/js/817.1594225a.chunk.js": "/tweetCart-test/static/js/817.1594225a.chunk.js",
-    "static/media/picture2 1.jpg": "/tweetCart-test/static/media/picture2 1.ac8aadacc9cefac0103b.jpg",
     "index.html": "/tweetCart-test/index.html",
     "main.b4a56f3c.css.map": "/tweetCart-test/static/css/main.b4a56f3c.css.map",
-    "main.f50e251b.js.map": "/tweetCart-test/static/js/main.f50e251b.js.map",
+    "main.63d42337.js.map": "/tweetCart-test/static/js/main.63d42337.js.map",
     "304.405b81a0.chunk.js.map": "/tweetCart-test/static/js/304.405b81a0.chunk.js.map",
-    "942.eca471e6.chunk.js.map": "/tweetCart-test/static/js/942.eca471e6.chunk.js.map",
+    "129.a8dd8add.chunk.js.map": "/tweetCart-test/static/js/129.a8dd8add.chunk.js.map",
     "817.1594225a.chunk.js.map": "/tweetCart-test/static/js/817.1594225a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b4a56f3c.css",
-    "static/js/main.f50e251b.js"
+    "static/js/main.63d42337.js"
   ]
 }
