@@ -1,9 +1,9 @@
 import {useLocation} from 'react-router-dom'
 import { useEffect, useState, 
-  // useRef
+  useRef
 } from 'react';
 import { loadFromStorage, saveToStorage } from 'components/services/storage';
-import {  StyledLink , UserItem, UserList, Wrapper, CardWrapper, AvatarBox, Avatar, WrapperBottom, Tweet, Followers, Button, ButtonText 
+import {  StyledLink ,  Wrapper 
 } from './Tweets.styled'
 import {fetchUsers,  updateFollowers} from 'components/API/userApi'
 import STATUS from 'components/services/status'
@@ -11,6 +11,7 @@ import Section from 'components/Section/Section'
 import ButtonLoadMore from 'components/ButtonLoadMore/ButtonLoadMore';
 import DropDown from 'components/DropDown/DropDown'
 import Loader from 'components/Loader/Loader'
+import UsersList from 'components/UserList/UserList'
 
 const Tweets = () =>{
   const [status, setStatus] =useState(STATUS.idle)
@@ -21,7 +22,7 @@ const Tweets = () =>{
   
 
 const location = useLocation();
-// const firsRender = useRef(true);
+const firsRender = useRef(true);
 
 useEffect (()=>{
   setStatus(STATUS.pending);
@@ -34,12 +35,12 @@ useEffect (()=>{
   })
   .catch(console.log);
 
-  // if (!firsRender.current) {
-  //   fetchUsers(page);
-  //   return;
-  // }
+  if (!firsRender.current) {
+    fetchUsers(page);
+    return;
+  }
 
-  // firsRender.current = false;
+  firsRender.current = false;
 },[page])
 
 useEffect(() => {
@@ -89,8 +90,6 @@ const filterUsers = (users, selectedFilter) => {
 
 
 const filteredUsers = filterUsers(users, selectedFilter);
-// const isFollowing = loadFromStorage(`tweet_${users.id}`) === true;
-
 
     return (
     
@@ -103,34 +102,9 @@ const filteredUsers = filterUsers(users, selectedFilter);
             value={selectedFilter}
             setSelectedFilter={setSelectedFilter}
           />
-          {users.length > 0 && (
-        
-  <UserList>
-    {users.map(({ id, user, tweets, followers, avatar, isFollowing }) => (
-  
-      <UserItem key={id} >
-        <CardWrapper>
-          <AvatarBox>
-          <Avatar width={62} height={62} src={avatar} alt='user avatar' />
-          </AvatarBox>
-
-          <WrapperBottom>
-            <Tweet> {tweets} Tweets </Tweet>
-            <Followers> {followers.toLocaleString()} Followers </Followers>
-          </WrapperBottom>
-          
-          <Button type='button' onClick={handleFollowClick}>
-        <ButtonText >
-          {isFollowing ? 'Following' : 'Follow'}
-        </ButtonText>
-      </Button> 
-      
-
-        </CardWrapper>  
-      </UserItem>
-    ))}
-  </UserList> 
-)}
+          {users.length > 0 && (<UsersList
+          users={filteredUsers} onFollowClick={handleFollowClick}/>)}
+ 
   {isLoadMoreVisible && filteredUsers.length !== 0 &&
   (<ButtonLoadMore 
   onBtnLoadMore={onBtnLoadMore}/>)}

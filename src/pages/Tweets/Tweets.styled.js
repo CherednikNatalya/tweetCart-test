@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import background from "images/picture2 1.jpg"
 import { Link } from 'react-router-dom';
 
 export const NavLink = styled.button`
@@ -23,14 +22,14 @@ display: flex;
 	margin-bottom:30px;`
 
 export const StyledLink = styled(Link)`
-  display: inline-flex;
+   display: flex;
+   max-width: 120px;
   padding: 5px 10px;
 border-radius: 7px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 17px;
   font-weight: bold;
   border: none;
-
   background: #EBD8FF;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover span {
@@ -41,27 +40,12 @@ border-radius: 7px;
   }
 `;
 
-// export const Section = styled.section`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 20px;
-//   flex-direction: column;
-// `;
-
 export const Wrapper = styled.div`
   padding: 20px;
   width: 1280px;
   margin-left: auto;
   margin-right: auto;
 `;
-
-
-// display: flex;
-// 	flex-wrap: wrap;
-// 	column-gap: 20px;
-// 	row-gap: 40px;
-
 
 export const UserList = styled.ul`
   display: flex;
@@ -73,7 +57,7 @@ export const UserList = styled.ul`
 
 export const CardWrapper = styled.div`
 position: relative;
-  z-index: 0;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +65,7 @@ position: relative;
   height: 100%;
   border-radius: 20px;
   box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
-  background-image: url('images/picture.png'), url('images/Vector.png');
+   background-image: url('images/bgi-1.png'), url('images/vector.png');
   background-position: top 28px right 36px, top 20px left 20px;
   background-repeat: no-repeat, no-repeat;
   color: #ebd8ff;
@@ -92,7 +76,7 @@ position: relative;
     top: 50%;
     left: 0;
     width: 100%;
-    height: 10px;
+    height: 8px;
     transform: translateY(-50%);
     background-color: #ebd8ff;
     box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06),
@@ -101,17 +85,7 @@ position: relative;
   }
 `
 
-export const WrapperTop = styled.div`
-  background: url(${background});
-  background-position: top 28px center;
-  background-repeat: no-repeat;
-   height: 100%;
-   width: 100%;
-`
 
-export const Logo = styled.div`
-padding: 20px 0 0 20px;
-`
 export const AvatarBox = styled.div`
   z-index: 1;
   display: flex;
@@ -129,6 +103,8 @@ export const AvatarBox = styled.div`
 export const Avatar = styled.img`
   background-color: #5736a3;
   border-radius: 50%;
+  width: 62px;
+  height: 62px;
 `;
 
 export const ImageWrapper = styled.div`
@@ -191,15 +167,6 @@ export const Button = styled.button`
   background-color: ${({ isFollowing }) =>
     isFollowing ? '#5CD3A8' : '#EBD8FF'};
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  ${({ isFollowing }) =>
-    isFollowing &&
-    `
-      transform: rotateY(180deg);
-      &::before {
-        transform: rotateY(180deg);
-        transform-origin: right center;
-      }
-    `}
 `;
 
 
@@ -240,4 +207,5 @@ export const UserItem = styled.li`
     #471ca9 -0.99%,
     #5736a3 54.28%,
     #4b2a99 78.99%
-  );`
+  );
+  `

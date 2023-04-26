@@ -5,20 +5,13 @@ import { App } from 'components/App';
 import './index.css';
 import GlobalStyle from './GlobalStyle';
 
-// import { PersistGate } from 'redux-persist/integration/react';
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-  
-  
+  // <React.StrictMode>
   <BrowserRouter basename="/tweetsCart-test" >
     <App />
     <GlobalStyle />
     </BrowserRouter>
-    
-
-</React.StrictMode>
+// </React.StrictMode>
 );
 
 

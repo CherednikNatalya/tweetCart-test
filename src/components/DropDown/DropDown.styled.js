@@ -12,12 +12,14 @@ const fadeIn = keyframes`
 `;
 
 export const Select = styled.select`
+max-width: 120px;
   padding: 8px;
-  margin-top: 8px;
+  margin-bottom: 30px;
   border: none;
+  font-weight: bold;
   border-radius: 4px;
   color: #333;
-  background-color: rgb(245, 225, 245);
+  background-color: #EBD8FF;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   opacity: 0;
   font-size: 18px;
